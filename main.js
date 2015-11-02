@@ -84,6 +84,14 @@ function drawCards(handArray) {
   var card1 = handArray[0].shift();
   var card2 = handArray[1].shift();
   newCardsArray.push(card1, card2);
+  var displayCards = document.createElement('h1');
+  displayCards.innerHTML = card1.card;
+  var currentDiv = document.getElementById('#player-cards');
+  document.body.insertBefore(displayCards, currentDiv);
+  var compCards = document.createElement('h1');
+  compCards.innerHTML = card2.card;
+  var currDiv = document.getElementById('#computer-cards');
+  document.body.insertBefore(compCards, currDiv);
   return newCardsArray;
 }
 
@@ -137,10 +145,10 @@ function miniGame(card1, card2) {
 
 function declareWinner() {
   if (deck1.length > 0) {
-    alert("Player 1 WINS");
+    console.log("Player 1 WINS");
   }
   else {
-    alert("Player 2 WINS");
+    console.log("Player 2 WINS");
   }
 }
 
@@ -170,7 +178,6 @@ function playRound(){
   if (deck1.length > 0 && deck2.length > 0){
     moveCardsToWinner(drawCards([deck1, deck2]));
   }
-  displayCards(deck);
   declareWinner();
   confirmPlay();
   }
