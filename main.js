@@ -1,56 +1,56 @@
 var deck = [
-  {card: ["🂡"], score: 14 },
-  {card: ["🂮"], score: 13 },
-  {card: ["🂭"], score: 12 },
-  {card: ["🂫"], score: 11 },
-  {card: ["🂪"], score: 10 },
-  {card: ["🂩"], score: 9 },
-  {card: ["🂨"], score: 8 },
-  {card: ["🂧"], score: 7 },
-  {card: ["🂦"], score: 6 },
-  {card: ["🂥"], score: 5 },
-  {card: ["🂤"], score: 4 },
-  {card: ["🂣"], score: 3 },
-  {card: ["🂢"], score: 2 },
-  {card: ["🂡"], score: 14 },
-  {card: ["🂾"], score: 13 },
-  {card: ["🂽"], score: 12 },
-  {card: ["🂻"], score: 11 },
-  {card: ["🂺"], score: 10 },
-  {card: ["🂹"], score: 9 },
-  {card: ["🂸"], score: 8 },
-  {card: ["🂷"], score: 7 },
-  {card: ["🂶"], score: 6 },
-  {card: ["🂵"], score: 5 },
-  {card: ["🂴"], score: 4 },
-  {card: ["🂳"], score: 3 },
-  {card: ["🂲"], score: 2 },
-  {card: ["🃑"], score: 14 },
-  {card: ["🃞"], score: 13 },
-  {card: ["🃝"], score: 12 },
-  {card: ["🃛"], score: 11 },
-  {card: ["🃚"], score: 10 },
-  {card: ["🃙"], score: 9 },
-  {card: ["🃘"], score: 8 },
-  {card: ["🃗"], score: 7 },
-  {card: ["🃖"], score: 6 },
-  {card: ["🃕"], score: 5 },
-  {card: ["🃔"], score: 4 },
-  {card: ["🃓"], score: 3 },
-  {card: ["🃒"], score: 2 },
-  {card: ["🃁"], score: 14 },
-  {card: ["🃎"], score: 13 },
-  {card: ["🃍"], score: 12 },
-  {card: ["🃋"], score: 11 },
-  {card: ["🃊"], score: 10 },
-  {card: ["🃉"], score: 9 },
-  {card: ["🃈"], score: 8 },
-  {card: ["🃇"], score: 7 },
-  {card: ["🃆"], score: 6 },
-  {card: ["🃅"], score: 5 },
-  {card: ["🃄"], score: 4 },
-  {card: ["🃃"], score: 3 },
-  {card: ["🃂"], score: 2 },
+{"card":"a","score":14,"suit":"d"},
+{"card":"a","score":14,"suit":"c"},
+{"card":"a","score":14,"suit":"s"},
+{"card":"a","score":14,"suit":"h"},
+{"card":"2","score":2,"suit":"d"},
+{"card":"2","score":2,"suit":"c"},
+{"card":"2","score":2,"suit":"s"},
+{"card":"2","score":2,"suit":"h"},
+{"card":"3","score":3,"suit":"d"},
+{"card":"3","score":3,"suit":"c"},
+{"card":"3","score":3,"suit":"s"},
+{"card":"3","score":3,"suit":"h"},
+{"card":"4","score":4,"suit":"d"},
+{"card":"4","score":4,"suit":"c"},
+{"card":"4","score":4,"suit":"s"},
+{"card":"4","score":4,"suit":"h"},
+{"card":"5","score":5,"suit":"d"},
+{"card":"5","score":5,"suit":"c"},
+{"card":"5","score":5,"suit":"s"},
+{"card":"5","score":5,"suit":"h"},
+{"card":"6","score":6,"suit":"d"},
+{"card":"6","score":6,"suit":"c"},
+{"card":"6","score":6,"suit":"s"},
+{"card":"6","score":6,"suit":"h"},
+{"card":"7","score":7,"suit":"d"},
+{"card":"7","score":7,"suit":"c"},
+{"card":"7","score":7,"suit":"s"},
+{"card":"7","score":7,"suit":"h"},
+{"card":"8","score":8,"suit":"d"},
+{"card":"8","score":8,"suit":"c"},
+{"card":"8","score":8,"suit":"s"},
+{"card":"8","score":8,"suit":"h"},
+{"card":"9","score":9,"suit":"d"},
+{"card":"9","score":9,"suit":"c"},
+{"card":"9","score":9,"suit":"s"},
+{"card":"9","score":9,"suit":"h"},
+{"card":"10","score":10,"suit":"d"},
+{"card":"10","score":10,"suit":"c"},
+{"card":"10","score":10,"suit":"s"},
+{"card":"10","score":10,"suit":"h"},
+{"card":"j","score":11,"suit":"d"},
+{"card":"j","score":11,"suit":"c"},
+{"card":"j","score":11,"suit":"s"},
+{"card":"j","score":11,"suit":"h"},
+{"card":"q","score":12,"suit":"d"},
+{"card":"q","score":12,"suit":"c"},
+{"card":"q","score":12,"suit":"s"},
+{"card":"q","score":12,"suit":"h"},
+{"card":"k","score":13,"suit":"d"},
+{"card":"k","score":13,"suit":"c"},
+{"card":"k","score":13,"suit":"s"},
+{"card":"k","score":13,"suit":"h"}
 ];
 
 var deckCopy = deck.slice();
@@ -84,14 +84,11 @@ function drawCards(handArray) {
   var card1 = handArray[0].shift();
   var card2 = handArray[1].shift();
   newCardsArray.push(card1, card2);
-  var displayCards = document.createElement('h1');
-  displayCards.innerHTML = card1.card;
-  var currentDiv = document.getElementById('#player-cards');
-  document.body.insertBefore(displayCards, currentDiv);
-  var compCards = document.createElement('h1');
-  compCards.innerHTML = card2.card;
-  var currDiv = document.getElementById('#computer-cards');
-  document.body.insertBefore(compCards, currDiv);
+
+  $('#player-cards').append('<img class="card-img" src="'+ 'img/' + card1.suit + "-" + card1.card + '.png' + '">'); 
+
+  $('#computer-cards').append('<img class="card-img" src="'+ 'img/' + card2.suit + "-" + card2.card + '.png' + '">');
+
   return newCardsArray;
 }
 
@@ -162,11 +159,13 @@ function confirmPlay() {
 
 function playGame () {
   splitDeck(shuffle(deckCopy));
-  while (deck1.length > 0 && deck2.length > 0) {
-    moveCardsToWinner(drawCards([deck1, deck2]));
-  }
-  declareWinner();
-  confirmPlay();
+  $('#player-cards').append('<img class="card-img" src="'+ 'img/back.png">');
+  $('#computer-cards').append('<img class="card-img" src="'+ 'img/back.png">');
+  // while (deck1.length > 0 && deck2.length > 0) {
+  //   moveCardsToWinner(drawCards([deck1, deck2]));
+  // }
+  // declareWinner();
+  // confirmPlay();
 }
 
 function startGame(){
@@ -175,10 +174,15 @@ function startGame(){
 }
 
 function playRound(){
+  $('#player-cards').html('');
+  $('#computer-cards').html('');
+  $('#player-cards').append('<img class="card-img" src="'+ 'img/back.png">');
+  $('#computer-cards').append('<img class="card-img" src="'+ 'img/back.png">');
   if (deck1.length > 0 && deck2.length > 0){
     moveCardsToWinner(drawCards([deck1, deck2]));
+  } else {
+    declareWinner();
+    confirmPlay();
   }
-  declareWinner();
-  confirmPlay();
-  }
+}
 

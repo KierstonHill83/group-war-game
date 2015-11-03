@@ -10,3 +10,10 @@ body {
 #hand-two {
   border: 1px solid black;
 }
+
+.card-img {
+  height: 325px;
+  border: 1px solid;
+  border-radius: 4%;
+  box-shadow: 10px 5px 5px black;
+}
