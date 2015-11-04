@@ -1,5 +1,8 @@
 body {
-  margin: 50px;
+  margin: 20px;
+  font-family: 'Slackey', cursive;
+  color: white;
+  background-color: #003333;
 }
 
 #hand-one {
@@ -12,8 +15,36 @@ body {
 }
 
 .card-img {
-  height: 325px;
+  height: 300px;
   border: 1px solid;
   border-radius: 4%;
   box-shadow: 10px 5px 5px black;
+}
+
+h1 {
+  font-size: 120px;
+  text-shadow: 4px 4px 7px black;
+}
+
+h2 {
+  font-size: 45px;
+  padding-bottom: 40px;
+}
+
+.back-card {
+  display: inline;
+}
+
+.player {
+  float: left;
+  padding: 15px;
+}
+
+.comp {
+  float: right;
+  padding: 15px;
+}
+
+button {
+  font-family: 'Oxygen', sans-serif;
 }

@@ -161,11 +161,6 @@ function playGame () {
   splitDeck(shuffle(deckCopy));
   $('#player-cards').append('<img class="card-img" src="'+ 'img/back.png">');
   $('#computer-cards').append('<img class="card-img" src="'+ 'img/back.png">');
-  // while (deck1.length > 0 && deck2.length > 0) {
-  //   moveCardsToWinner(drawCards([deck1, deck2]));
-  // }
-  // declareWinner();
-  // confirmPlay();
 }
 
 function startGame(){
@@ -176,8 +171,8 @@ function startGame(){
 function playRound(){
   $('#player-cards').html('');
   $('#computer-cards').html('');
-  $('#player-cards').append('<img class="card-img" src="'+ 'img/back.png">');
-  $('#computer-cards').append('<img class="card-img" src="'+ 'img/back.png">');
+  $('.back').html('');
+  $('.back').append('<img class="card-img" src="'+ 'img/back.png">');
   if (deck1.length > 0 && deck2.length > 0){
     moveCardsToWinner(drawCards([deck1, deck2]));
   } else {
