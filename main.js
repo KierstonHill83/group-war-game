@@ -156,16 +156,16 @@ function confirmPlay() {
       }
 }
 
-
 function playGame () {
   splitDeck(shuffle(deckCopy));
   $('#player-cards').append('<img class="card-img" src="'+ 'img/back.png">');
   $('#computer-cards').append('<img class="card-img" src="'+ 'img/back.png">');
+  $('#start-button').hide();
+  $('#play-button').show();
 }
 
 function startGame(){
   splitDeck(shuffle(deckCopy));
-  console.log();
 }
 
 function playRound(){
